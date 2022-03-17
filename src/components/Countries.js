@@ -56,7 +56,7 @@ const Countries = () => {
             {data
                .filter((country) => country.region.includes(selectedRadio))
                .sort((a, b) => b.population - a.population)
-               .map((country) => (
+               .slice(0, rangeValue).map((country) => (
                   <Card country={country} key={country.name} />
                ))}
          </ul>
